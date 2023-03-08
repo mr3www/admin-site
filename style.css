@@ -1,0 +1,565 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 1rem;
+    word-break: break-word;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(-250deg,#1a3150,white);
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Montserrat";
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  border-top: 5px solid black;
+  z-index: 99999;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-top: 3px solid #333;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  color: #ffda44;
+  border-top: 3px solid #ffda44;
+}
+
+/* Active/current link */
+.navbar a.active {
+  border-top: 3px solid #ffda44;
+  color: #ffda44;
+}
+
+/* Column container */
+.rowed {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 1%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .rowed {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.row-card-no-pd {
+    border-radius: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    background: #fff;
+    margin-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    -webkit-box-shadow: 2px 6px 15px 0 rgb(69 65 78 / 10%);
+    -moz-box-shadow: 2px 6px 15px 0 rgba(69,65,78,.1);
+    box-shadow: 2px 6px 15px 0 rgb(69 65 78 / 10%);
+    border: 1px dashed #aaa;
+}
+
+.card-stats .col-stats {
+    align-items: center;
+    display: flex;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.row-card-no-pd .card {
+    margin-bottom: 0;
+    border-width: 0;
+    box-shadow: none;
+    position: unset;
+}
+
+.card-round {
+    border-radius: 5px;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+.row-card-no-pd [class*=col] .card:before {
+    position: absolute;
+    height: calc(100%);
+    width: 1px;
+    background: #eee;
+    content: '';
+    right: 0;
+}
+
+.card-stats .card-body {
+    padding: 15px!important;
+}
+
+.card, .card-light {
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 2px 6px 15px 0 rgb(69 65 78 / 10%);
+    -moz-box-shadow: 2px 6px 15px 0 rgba(69,65,78,.1);
+    box-shadow: 2px 6px 15px 0 rgb(69 65 78 / 10%);
+    border: 0;
+}
+
+.card .card-body, .card-light .card-body {
+    padding: 1.25rem;
+}
+
+.col-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-stats .card-title {
+    margin-bottom: 0!important;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    margin: 0;
+    color: #575962;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px){
+.col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+}
+
+.card-stats .card-category {
+    margin-top: 0;
+}
+
+.card-category {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6f8caa;
+    font-weight: 600;
+    margin-bottom: 0;
+    word-break: normal;
+}
+
+.col-md-3,
+.col-sm-6 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.main h2 {
+    font-style: italic;
+    font-family: "Montserrat";
+    color: #1a3150;
+}
+
+table {
+    font-family: "Roboto", sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background: #1a3150;
+    color: #fff;
+}
+
+td, th {
+    border: 1px dotted #6f8caa;
+    text-align: left;
+    padding: 8px;
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: #e1e7ed;
+}
+
+.side h2 {
+   font-style: italic;
+      font-family: "Montserrat";
+}
+
+.side h3 {
+    background: linear-gradient(-250deg,#1a3150,#aaa);
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+
+.side h3:hover {
+    opacity: 0.7;
+}
+
+.basic-table {
+   margin-left: 10px;
+   margin-right: 10px;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background: #1a3150;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: italic;
+}
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(-95deg,#1a3150,white);
+}
+
+.wrap-login100 {
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 177px 130px 33px 95px;
+}
+
+.login100-pic {
+    width: 316px;
+}
+
+.login100-pic img {
+    max-width: 100%;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.login100-form {
+    width: 290px;
+}
+
+.login100-form-title {
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-bottom: 54px;
+    font-weight: 800;
+}
+
+.validate-input {
+    position: relative;
+}
+
+.wrap-input100 {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.input100 {
+    font-family: "Roboto",Sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.focus-input100 {
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0;
+    color: rgba(87,184,70,.8);
+}
+
+.symbol-input100 {
+    font-size: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    color: #666;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+
+.container-login100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login100-form-btn {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+
+button {
+    outline: none!important;
+    border: none;
+    background: 0 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.p-t-12 {
+    padding-top: 12px;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+.txt1 {
+    font-family: "Montserrat";
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999;
+}
+
+.txt2 {
+    font-family: "Montserrat";
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.login100-form-btn:hover {
+    background: #333;
+}
+
+.p-t-136 {
+    padding-top: 136px;
+}
+
+.m-l-5 {
+    margin-left: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #57b846;
+}
+
+a {
+    text-decoration: none;
+}
